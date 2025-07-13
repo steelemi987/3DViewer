@@ -1,0 +1,5 @@
+/Users/sonybvc/Downloads/3DViewer(dark) 2/src/view/out/build/debug/CMakeFiles/3DViewer.dir
+/Users/sonybvc/Downloads/3DViewer(dark) 2/src/view/out/build/debug/CMakeFiles/edit_cache.dir
+/Users/sonybvc/Downloads/3DViewer(dark) 2/src/view/out/build/debug/CMakeFiles/rebuild_cache.dir
+/Users/sonybvc/Downloads/3DViewer(dark) 2/src/view/out/build/debug/CMakeFiles/3DViewer_autogen_timestamp_deps.dir
+/Users/sonybvc/Downloads/3DViewer(dark) 2/src/view/out/build/debug/CMakeFiles/3DViewer_autogen.dir

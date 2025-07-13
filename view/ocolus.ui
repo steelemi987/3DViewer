@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ocolus</class>
+ <widget class="QWidget" name="Ocolus">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1191</width>
+    <height>635</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Ocolus</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: white;
+background-color: dark-gray;</string>
+  </property>
+  <widget class="TestOpenGLWidget" name="openGLWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>800</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="OpenFileButton">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>120</y>
+     <width>166</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: gray;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    font: bold 12px;
+    min-width: 10em;
+    padding: 6px;</string>
+   </property>
+   <property name="text">
+    <string>Open File</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="name_header">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>20</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Filename:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="filename">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>50</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>1040</x>
+     <y>190</y>
+     <width>111</width>
+     <height>97</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="projection_type_label">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="text">
+       <string>Projection Type:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="parallel_radioButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="text">
+       <string>Parallel</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="central_radioButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="text">
+       <string>Central</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>470</y>
+     <width>141</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="edge_type_label">
+      <property name="text">
+       <string>Edge Type:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="e_solid_radioButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="text">
+       <string>Solid</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="e_dashed_radioButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="text">
+       <string>Dashed</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="e_thickness_label">
+      <property name="text">
+       <string>Edge thickness:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="e_thickness_Slider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>2</number>
+      </property>
+      <property name="maximum">
+       <number>50</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>470</y>
+     <width>151</width>
+     <height>145</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QLabel" name="v_type_label">
+      <property name="text">
+       <string>Vertex Type:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="v_none_radioButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="text">
+       <string>None</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="v_circular_radioButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="text">
+       <string>Circular</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="v_squared_radioButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="text">
+       <string>Squared</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="vertex_size_label">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Vertex Size</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="v_size_Slider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>5</number>
+      </property>
+      <property name="maximum">
+       <number>50</number>
+      </property>
+      <property name="value">
+       <number>5</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="showButton">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>160</y>
+     <width>166</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: gray;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    font: bold 12px;
+    min-width: 10em;
+    padding: 6px;</string>
+   </property>
+   <property name="text">
+    <string>Show</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>1029</x>
+     <y>20</y>
+     <width>131</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QLabel" name="vertexes_header">
+      <property name="text">
+       <string>Vertexes:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="num_of_v">
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="edges_label">
+      <property name="text">
+       <string>Edges:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="num_of_e">
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>110</y>
+     <width>160</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <item>
+     <widget class="QLabel" name="tr_x">
+      <property name="text">
+       <string>Translate X</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="translateXSlider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>-100</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="tr_y">
+      <property name="text">
+       <string>Translate Y</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="translateYSlider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>-100</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="tr_z">
+      <property name="text">
+       <string>Translate Z</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="translateZSlider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>-100</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="sc">
+      <property name="text">
+       <string>Scale</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="scaleSlider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>-100</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="rt_x">
+      <property name="text">
+       <string>Rotate X</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="rotateXSlider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>-360</number>
+      </property>
+      <property name="maximum">
+       <number>360</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="rt_y">
+      <property name="text">
+       <string>Rotate Y</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="rotateYSlider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>-360</number>
+      </property>
+      <property name="maximum">
+       <number>360</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="rt_z">
+      <property name="text">
+       <string>Rotate Z</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="rotateZSlider">
+      <property name="styleSheet">
+       <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+      </property>
+      <property name="minimum">
+       <number>-360</number>
+      </property>
+      <property name="maximum">
+       <number>360</number>
+      </property>
+      <property name="singleStep">
+       <number>1</number>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="e_color_Button">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>300</y>
+     <width>166</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: gray;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    font: bold 12px;
+    min-width: 10em;
+    padding: 6px;</string>
+   </property>
+   <property name="text">
+    <string>Edge Color</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="v_color_Button">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>340</y>
+     <width>166</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: gray;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    font: bold 12px;
+    min-width: 10em;
+    padding: 6px;</string>
+   </property>
+   <property name="text">
+    <string>Vertex Color</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bg_color_Button">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>380</y>
+     <width>166</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: gray;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    font: bold 12px;
+    min-width: 10em;
+    padding: 6px;</string>
+   </property>
+   <property name="text">
+    <string>BG Color</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setDefault_Button">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>420</y>
+     <width>166</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: gray;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    font: bold 12px;
+    min-width: 10em;
+    padding: 6px;</string>
+   </property>
+   <property name="text">
+    <string>Set Default</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveScreenshotButton">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>540</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: gray;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    font: bold 12px;
+    padding: 6px;</string>
+   </property>
+   <property name="text">
+    <string>Screen</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="recordGifButton">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>540</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    background-color: gray;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    font: bold 12px;
+    padding: 6px;</string>
+   </property>
+   <property name="text">
+    <string>Gif</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>821</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>460</y>
+     <width>331</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: dark-gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>190</y>
+     <width>131</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: dark-gray;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: white;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_3</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>openGLWidget</zorder>
+  <zorder>OpenFileButton</zorder>
+  <zorder>name_header</zorder>
+  <zorder>filename</zorder>
+  <zorder>verticalLayoutWidget</zorder>
+  <zorder>verticalLayoutWidget_2</zorder>
+  <zorder>verticalLayoutWidget_3</zorder>
+  <zorder>showButton</zorder>
+  <zorder>verticalLayoutWidget_4</zorder>
+  <zorder>verticalLayoutWidget_5</zorder>
+  <zorder>e_color_Button</zorder>
+  <zorder>v_color_Button</zorder>
+  <zorder>bg_color_Button</zorder>
+  <zorder>setDefault_Button</zorder>
+  <zorder>saveScreenshotButton</zorder>
+  <zorder>recordGifButton</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TestOpenGLWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>TestOpenGLWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
